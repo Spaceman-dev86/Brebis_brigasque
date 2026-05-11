@@ -72,6 +72,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel='stylesheet' id='qode_style_dynamic_responsive-css' href="../../assets/wp-content/themes/bodega/css/style_dynamic_responsive.css" type='text/css' media='all' />
 <link rel='stylesheet' id='js_composer_front-css' href="../../assets/wp-content/plugins/js_composer/assets/css/js_composer.min.css" type='text/css' media='all' />
 <link rel='stylesheet' id='qode_custom_css-css' href="../../assets/wp-content/themes/bodega/css/custom_css.css" type='text/css' media='all' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script type="text/javascript" id="layerslider-greensock-js-extra">
 /* <![CDATA[ */
 var LS_Meta = {"v":"6.7.6"};
@@ -83,6 +84,8 @@ var LS_Meta = {"v":"6.7.6"};
 <script type="text/javascript" src="../../assets/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.kreaturamedia.jquery.js" id="layerslider-js"></script>
 <script type="text/javascript" src="../../assets/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.transitions.js" id="layerslider-transitions-js"></script>
 <script type="text/javascript" src="../../assets/wp-content/themes/bodega/js/custom_js.js" id="custom-js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="../../js/eleveurs-map.js"></script>
 <meta name="generator" content="Powered by LayerSlider 6.7.6 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress." />
 <!-- LayerSlider updates and docs at: https://layerslider.kreaturamedia.com -->
 <link rel="https://api.w.org/" href="../../wp-json/" /><link rel="alternate" type="application/json" href="../../wp-json/wp/v2/pages/50617" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../assets/xmlrpc.php" />
@@ -230,7 +233,7 @@ var LS_Meta = {"v":"6.7.6"};
 	</div> </div></div></div></div></div></div><div      class="vc_row wpb_row section  grid_section" style=' text-align:left;'><div class=" section_inner clearfix"><div class='section_inner_margin clearfix'><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
 	<div class="wpb_text_column wpb_content_element ">
 		<div class="wpb_wrapper">
-			<p>[ultimate_maps id= »1&Prime;]</p>
+			<div id="eleveurs-map" data-eleveurs-json="../../data/eleveurs.json" style="height: 520px; border-radius: 8px; overflow: hidden;"></div>
 
 		</div> 
 	</div> </div></div></div></div></div></div>

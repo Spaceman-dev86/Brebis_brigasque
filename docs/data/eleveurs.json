@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Pl vigneaux",
+    "description": "<p>Saepe viverra dolorum odio aliquam necessitatibus integer aliquip gravida luctus sit sagittis porta iusto ipsam nulla.</p><p><a href=\"http://www.paulinelaurent.fr\">monlien.fr</a></p>",
+    "lat": "46.576644",
+    "lng": "2.051426"
+  },
+  {
+    "id": 2,
+    "title": "Marqueur2",
+    "description": "<p><img class=\"alignnone size-medium wp-image-50589\" src=\"GMP_SITE_URLwp-content/uploads/2019/01/fromages-300x200.jpg\" alt=\"\" width=\"300\" height=\"200\" /></p>",
+    "lat": "46.576644",
+    "lng": "10.051426"
+  }
+]
+
