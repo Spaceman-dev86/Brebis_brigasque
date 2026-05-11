@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const docsRoot = path.resolve("docs");
+const localhostBase = "http://localhost:8080";
 
 function listHtmlFiles(dir) {
   const out = [];
@@ -32,6 +33,23 @@ function fixFile(filePath) {
   html = html.replaceAll("../media/", `${pre}media/`);
   html = html.replaceAll("../assets/", `${pre}assets/`);
 
+  // Replace absolute localhost links to repo-relative links.
+  // Examples:
+  // - http://localhost:8080/la-brigasque/ -> (pre)la-brigasque/
+  // - http://localhost:8080/ -> (pre)
+  html = html.replaceAll(`${localhostBase}/`, pre);
+  html = html.replaceAll(localhostBase, pre.replace(/\/+$/, "")); // just in case
+
+  // Replace JSON-escaped localhost (http:\/\/localhost:8080\/...)
+  html = html.replaceAll("http:\\/\\/localhost:8080\\/", pre);
+  html = html.replaceAll("http:\\/\\/localhost:8080", pre.replace(/\/+$/, ""));
+
+  // Replace root-relative links (href="/foo") so GitHub Pages doesn't jump to domain root.
+  // Keep protocol-relative URLs (//fonts.googleapis.com) intact.
+  html = html.replace(/\b(href|src)=["']\/(?!\/)([^"']+)["']/gi, (_m, attr, p) => {
+    return `${attr}="${pre}${p}"`;
+  });
+
   fs.writeFileSync(filePath, html, "utf8");
   return { filePath, depth };
 }
@@ -40,6 +58,15 @@ function main() {
   if (!fs.existsSync(docsRoot)) {
     throw new Error("docs/ folder not found. Run this from repo root.");
   }
+
+  // Make docs/ root serve the real homepage.
+  // The WP export's base URL resolved to /la-brigasque/; we want /accueil/ as landing page.
+  const accueil = path.join(docsRoot, "accueil", "index.html");
+  const rootIndex = path.join(docsRoot, "index.html");
+  if (fs.existsSync(accueil)) {
+    fs.copyFileSync(accueil, rootIndex);
+  }
+
   const files = listHtmlFiles(docsRoot);
   const stats = { files: files.length };
   for (const f of files) fixFile(f);
