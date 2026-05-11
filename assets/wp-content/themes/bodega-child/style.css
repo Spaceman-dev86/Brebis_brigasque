@@ -1,0 +1,407 @@
+/*
+Theme Name: Bodega Child
+Theme URI: http://demo.select-themes.com/bodega/
+Description: A child theme of Bodega Theme
+Author: Select Themes
+Author URI: http://select-themes.com
+Version: 1.0.0
+Template: bodega
+*/
+@import url("../bodega/style.css");
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+
+
+/* FONT */
+
+.page_header nav.main_menu > ul > li > a,
+h1, h2, h3, h4, h5, h6,
+.title_holder, .title_holder h2, span.subtitle {
+    font-family: 'Kalam', cursive !important;
+    letter-spacing: normal !important;
+    font-style: normal;
+}
+
+.page h2 {
+    line-height: 1.15em;
+}
+
+.call_to_action_text {
+    line-height: 1.5em;
+}
+
+.page a, .page p a {
+    font-weight: inherit;
+}
+
+/* HEADER */
+
+.page nav.main_menu >ul > li > a > span.item_inner,
+.single nav.main_menu >ul > li > a > span.item_inner {
+    padding: 0 14px;
+}
+
+@media screen and (min-width: 1000px) {
+    
+    .q_logo img {
+        left: 50%;
+        -webkit-transform: translateX(-50%); 
+        -ms-transform: translateX(-50%); 
+        transform: translateX(-50%); 
+    }
+
+    .sticky .q_logo img {
+        left: 0;
+        -webkit-transform: none; 
+        -ms-transform: none; 
+        transform: none; 
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .page nav.main_menu >ul > li > a > span.item_inner,
+    .single nav.main_menu >ul > li > a > span.item_inner {
+        padding: 0 8px;
+        font-size: 18px;
+    }
+}
+
+.page .drop_down .narrow .second .inner ul li,
+.single .drop_down .narrow .second .inner ul li {
+    width: 280px;
+}
+
+/* HOME */
+
+.home .content_inner .wpb_layerslider_element.wpb_content_element {
+    margin-bottom: 0 !important;
+}
+
+.home-title-01 h1,
+.home-title-01 h2 {
+    color: #414f5f;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+.home-title-01 h2 {
+    font-size: 24px;
+    text-transform: none;
+}
+
+.caractere p {
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #444444;
+    margin-top: 1.8rem;
+    margin-bottom: 6rem;
+}
+
+.caractere {
+    position: relative;
+}
+
+.caractere::after {
+    display: block;
+    position: absolute;
+}
+
+#caract-01::after {
+    content: url(images/fleches_01.png);
+    right: -5px;
+    top: -5px;
+}
+
+#caract-02::after {
+    content: url(images/fleches_02.png);
+    right: 80px;
+    top: -5px;
+}
+
+#caract-03::after {
+    content: url(images/fleches_03.png);
+    right: -20px;
+    top: -10px;
+}
+
+#caract-04::after {
+    content: url(images/fleches_04.png);
+    right: 290px;
+    top: -15px;
+}
+
+#caract-05::after {
+    content: url(images/fleches_05.png);
+    right: 255px;
+    top: 5px;
+}
+
+#caract-06::after {
+    content: url(images/fleches_06.png);
+    right: 315px;
+    top: 0px;
+}
+
+.row-rustique .wpb_text_column h2,
+.row-tradition .wpb_text_column h2,
+.row-environnement .wpb_text_column h2 {
+    margin-bottom: 80px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.content_inner .row-rustique .wpb_content_element.wpb_text_column h2, 
+.content_inner .row-environnement .wpb_content_element.wpb_text_column h2 {
+    margin-bottom: 60px;
+}
+
+.row-rustique h3,
+.row-environnement h3 {
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+    
+    .row-rustique .wpb_text_column h2::after {
+        content: url(images/deco_01.png);
+        padding-left: 40px;
+    }
+
+    .row-tradition .wpb_text_column h2::before {
+        content: url(images/deco_02.png);
+        padding-right: 40px;
+    }
+
+    .row-tradition .wpb_text_column h2::after {
+        content: url(images/deco_02.png);
+        padding-left: 40px;
+    }
+}
+
+.row-rustique .wpb_text_column h2,
+.row-rustique .wpb_text_column h3,
+.row-rustique .wpb_text_column p {
+   color: #4d3f44;
+}
+
+.row-tradition .wpb_text_column h2 {
+    color: #414f5f;
+}
+
+.row-environnement .wpb_text_column h2,
+.row-environnement .wpb_text_column h3,
+.row-environnement .wpb_text_column p {
+    color: #5c494f;
+}
+
+/* PAGES */
+
+.title_outer.title_without_animation {
+    margin-bottom: 70px;
+}
+
+.home .title_outer.title_without_animation,
+.page-id-50506 .title_outer.title_without_animation,
+.page-id-50607 .title_outer.title_without_animation {
+    margin-bottom: 0;
+}
+
+.page .content .container .container_inner.default_template_holder {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.content_inner .wpb_content_element {
+    margin-bottom: 50px !important;
+}
+
+.content_inner .wpb_content_element p,
+.content_inner .wpb_content_element h2 {
+    margin-bottom: 10px;
+}
+
+/* Page tapis */
+
+#row-tapis .wpb_single_image.wpb_content_element {
+    margin-bottom: 0 !important;
+}
+
+#row-tapis .wpb_text_column.wpb_content_element {
+    padding: 20px;
+    text-align: center;
+}
+
+#row-tapis .wpb_text_column.wpb_content_element ul {
+    padding-bottom: 10px;
+}
+
+/* BLOG */
+
+.post_content_column.text-wrapper.split_column_full_width {
+    padding: 35px 25px;
+}
+
+/* REPERTOIRE MAP */
+
+.umsMarkerGroup,
+.umsMmlSlideTableHeader {
+    display: none !important;
+}
+    
+@media screen and (max-width: 720px) {
+
+    .page .ums_map_opts {
+        padding: 0 !important;
+    }
+}
+
+.umsMarkerGroupWrapper {
+    display: block!important;
+    border: 2px solid #b9d4ee;
+}
+
+.umsMmlSliderTableShell .umsMmlSlidesTable td {
+    border-bottom: 1px solid #b9d4ee !important;
+    padding: 10px 10px 10px 20px !important;
+}
+
+.umsMmlSliderTableShell .umsMmlSlidesTable td, 
+td p {
+    font-size: 15px !important;
+    line-height: 21px !important;
+    font-weight: 400 !important;
+    text-align: left;
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.umsMmlSliderTableShell .umsMmlSlidesTable td, 
+td p a {
+    font-weight: 600;
+}
+
+.leaflet-popup-content {
+    margin: 20px !important;
+    width: 250px !important;
+}
+
+.ums_MapPreview .leaflet-map-pane .leaflet-popup-content .umsMarkerTitle {
+    font-size: 19px !important;
+    text-align: left !important;
+    text-transform: none;
+}
+
+.ums_MapPreview .leaflet-map-pane .leaflet-popup-content .umsMarkerDesc * {
+    font-size: 15px;
+    line-height: 21px;
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.leaflet-container p a {
+    color: #b9a57e;
+    font-weight: 600;
+}
+
+.umsMmlSliderTableShell .umsMmlSlidesTable td a {
+    white-space: inherit !important;
+}
+
+@media screen and (max-width: 480px) { 
+    
+    .umsMmlSlidesTable,
+    .umsMmlSlidesTable tbody,
+    .umsMmlSlidesTable table tbody tr.umsMmlSlideTableRow,
+    table tbody tr {
+        display: block !important;
+    }
+}
+
+
+/* PETITES ANNONCES */
+
+.blog_holder article .post_info {
+    font-size: 14px !important;
+    font-weight: 800;
+    margin-bottom: 20px !important;
+}
+
+/* GALERIE */
+
+.pp_pic_holder.pp_default .ppt {
+    opacity: 0 !important;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {
+    
+    .caractere p {
+        margin-bottom: 4rem;
+    }
+    .caractere::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .caractere p {
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .page .content .content_inner > .full_width > .full_width_inner {
+        padding-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .caractere p {
+        margin-bottom: 2rem;
+        text-align: center !important;
+    }
+    
+    .content .row-rustique .wpb_text_column h2, 
+    .content .row-tradition .wpb_text_column h2, 
+    .content .row-environnement .wpb_text_column h2 {
+        font-size: 35px;
+    }
+    
+    /* Repertoire */
+    .umsMmlSliderTableShell .umsMmlSlidesTable td {
+        display: block;
+        border-bottom: none !important;
+    }
+    
+    /* Petites annonces */
+    .single .blog_holder article h2 a {
+        font-size: 1em !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .single .blog_holder article h2 {
+        line-height: 1em;
+    }
+    
+    /* Footer */
+    .footer_top #text-3 a {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .single .blog_holder article h2 {
+        line-height: 1em;
+    }
+}
