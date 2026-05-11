@@ -44,6 +44,12 @@ function fixFile(filePath) {
   html = html.replaceAll("http:\\/\\/localhost:8080\\/", pre);
   html = html.replaceAll("http:\\/\\/localhost:8080", pre.replace(/\/+$/, ""));
 
+  // Normalize existing relative links that start with "../" so they never escape the docs root.
+  // We rewrite "../foo" or "../../foo" to "<pre>foo" where <pre> is computed from current file depth.
+  html = html.replace(/\b(href|src)=["']((?:\.\.\/)+)([^"']*)["']/gi, (_m, attr, _ups, rest) => {
+    return `${attr}="${pre}${rest}"`;
+  });
+
   // Replace root-relative links (href="/foo") so GitHub Pages doesn't jump to domain root.
   // Keep protocol-relative URLs (//fonts.googleapis.com) intact.
   html = html.replace(/\b(href|src)=["']\/(?!\/)([^"']+)["']/gi, (_m, attr, p) => {
