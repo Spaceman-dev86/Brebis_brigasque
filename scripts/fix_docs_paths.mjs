@@ -82,10 +82,20 @@ function main() {
   const footerReplacement =
     'Site réalisé par <a href="https://spaceman-dev86.github.io/Portfolio-R-mi-SARRO/index.html" target="_blank" rel="noopener">Rémi Sarro</a> sur la base du travail de <a href="https://melezart.fr/" target="_blank" rel="noopener">pl</a>';
 
+  const copyrightNeedle = "© Copyright 2019 - ";
+
   for (const f of files) {
     let html = fs.readFileSync(f, "utf8");
+    let changed = false;
     if (html.includes(footerNeedle)) {
       html = html.replaceAll(footerNeedle, footerReplacement);
+      changed = true;
+    }
+    if (html.includes(copyrightNeedle)) {
+      html = html.replaceAll(copyrightNeedle, "");
+      changed = true;
+    }
+    if (changed) {
       fs.writeFileSync(f, html, "utf8");
     }
   }
