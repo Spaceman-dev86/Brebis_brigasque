@@ -22,6 +22,30 @@ Template: bodega
   content: "\2630" !important; /* ☰ */
 }
 
+/* Mobile sub-menu arrows (avoid missing FontAwesome fonts in static export) */
+nav.mobile_menu ul li > span.mobile_arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+nav.mobile_menu ul li > span.mobile_arrow i.fa {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  font-size: 18px !important;
+}
+/* "closed" state arrow (right chevron) */
+nav.mobile_menu ul li > span.mobile_arrow i.fa.fa-angle-right:before {
+  content: "\203A" !important; /* › */
+}
+/* "open" state arrow (down chevron) */
+nav.mobile_menu ul li > span.mobile_arrow i.fa.fa-angle-down:before {
+  content: "\2304" !important; /* ⌄ */
+}
+
 
 /* FONT */
 
