@@ -76,6 +76,19 @@ function main() {
   const files = listHtmlFiles(docsRoot);
   const stats = { files: files.length };
   for (const f of files) fixFile(f);
+
+  // Update footer attribution everywhere in docs/
+  const footerNeedle = 'Site réalisé par <a href="https://paulinelaurent.fr/" target="_blank" rel="noopener"><span class="footer-pl">pl</span></a>';
+  const footerReplacement =
+    'Site réalisé par <a href="https://spaceman-dev86.github.io/Portfolio-R-mi-SARRO/index.html" target="_blank" rel="noopener">Rémi Sarro</a> sur la base du travail de <a href="https://melezart.fr/" target="_blank" rel="noopener">pl</a>';
+
+  for (const f of files) {
+    let html = fs.readFileSync(f, "utf8");
+    if (html.includes(footerNeedle)) {
+      html = html.replaceAll(footerNeedle, footerReplacement);
+      fs.writeFileSync(f, html, "utf8");
+    }
+  }
   console.log(`OK: fixed ${stats.files} html files under docs/`);
 }
 

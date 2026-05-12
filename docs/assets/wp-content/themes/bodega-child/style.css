@@ -10,6 +10,18 @@ Template: bodega
 @import url("../bodega/style.css");
 @import url('https://fonts.googleapis.com/css?family=Kalam');
 
+/* Mobile hamburger icon (avoid missing FontAwesome fonts in static export) */
+.mobile_menu_button .qode_icon_font_awesome.fa.fa-bars {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  font-size: 28px !important;
+}
+.mobile_menu_button .qode_icon_font_awesome.fa.fa-bars:before {
+  content: "\2630" !important; /* ☰ */
+}
+
 
 /* FONT */
 
